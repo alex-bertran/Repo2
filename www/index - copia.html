@@ -2,8 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
-        <title>Aj. SPP</title>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        <title>Animals en Risc</title>
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" /> 
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
@@ -18,6 +18,7 @@
 		</script>
         <style>               
             .leaflet-control-locate {display:none}
+            
             #portada{
                 width:100%;
                 height:100%;
@@ -275,7 +276,7 @@
 					visor.map = L.map('map', { zoomControl:false, detectRetina:true });
 					visor.popup = L.popup();
 					var opcionsBase= 'google';
-					visor.map.setView([42.188, 3.0819], 12);   
+					visor.map.setView([41.37, 2.15], 12);   
 					
 					switch (opcionsBase){
 						case 'mapbox':           
@@ -809,10 +810,10 @@
 					
 					<div style="float: left; font-weight:bold; text-align: center; font-family: Verdana; color: rgb(255, 255, 255); width: 100%; height: 1.1em; margin-top: 0.3em;"> 
 						<a id="activa" href="#imatgePujada" data-transition="pop">	
-							Aj. SPP
+							Alerta Situació
 						</a>			
 				     </div>
-					<div style="clear: both; text-align: center; font-family: Verdana; color: rgb(255, 255, 255); font-size: 0.6em; width: 100%; height: 15px; margin-top: -1px;"> Incidències </div>
+					<div style="clear: both; text-align: center; font-family: Verdana; color: rgb(255, 255, 255); font-size: 0.6em; width: 100%; height: 15px; margin-top: -1px;"> Risc Animal </div>
 				</div>
 				<div id="troba5" style="float: right; margin-top: -1.3em;height:24px ; font-size: 1.5em; width: 5%;margin-right: 9px;" onclick="navigator.app.exitApp();">
 					<i class="fa fa-close"></i>
