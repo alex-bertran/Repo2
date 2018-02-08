@@ -7,11 +7,11 @@
 			version = "2.0.0">
 
   
-	<name>Risc Animal</name>
+	<name>Aj. SPP</name>
 	<gap:splash src="splash.png" />
 	<preference name="SplashMaintainAspectRatio" value="true" />
     <description> 
-        App per identificar situacions de risc animal
+        App de l'Aj de SPP
     </description>
 	<access origin="*" />
     <allow-intent href="*" />
