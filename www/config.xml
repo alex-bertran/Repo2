@@ -7,11 +7,11 @@
 			version = "2.0.0">
 
   
-	<name>Aj. SPP</name>
+	<name>Aj. Sant Pere Pescador</name>
 	<gap:splash src="splash.png" />
 	<preference name="SplashMaintainAspectRatio" value="true" />
     <description> 
-        App de l'Aj de SPP
+        App Aj. Sant Pere Pescador
     </description>
 	<access origin="*" />
     <allow-intent href="*" />
