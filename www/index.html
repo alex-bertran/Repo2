@@ -380,7 +380,7 @@
 										+ '          </div>'                                        
 										+ '     </div>   '                               
                                         + '     <div style="float:right;height:95%;overflow:hidden;width: 56%;background-color:#ffffff"> '
-                                        + '         <img style="float:right;margin-right:1em;margin-top:0.5em; display:block;max-width:73%;max-height:90%;width:auto;height:auto;" src="http://issolutions.esy.es/ma/www/php/image/'
+                                        + '         <img style="float:right;margin-right:1em;margin-top:0.5em; display:block;max-width:73%;max-height:90%;width:auto;height:auto;" src="http://www.municipi.net/app/image/'
                                         +               punt.imatge 
                                         + '         " />'
                                         + '     </div>   '
@@ -571,7 +571,7 @@
                 options.params = params;
 				visor.params = params;
                 var ft = new FileTransfer();
-                ft.upload(imageURI, encodeURI("http://issolutions.esy.es/ma/www/php/upload.php"), ftWin, ftFail, options,true);                                       
+                ft.upload(imageURI, encodeURI("http://www.municipi.net/app/upload.php"), ftWin, ftFail, options,true);                                       
             } 
 
             function ftWin(r) {
@@ -579,7 +579,7 @@
                 console.log("Response = " + r.response);
                 console.log("Sent = " + r.bytesSent);
 				$.ajax({
-					url: "http://issolutions.esy.es/ma/www/php/insert.php", 
+					url: "http://www.municipi.net/app/insert.php", 
 					type: "POST",
 					data: visor.params,
 					success: function(){
@@ -609,7 +609,7 @@
 				//;
 				//alert(visor.params.codi);
 				$.ajax({
-					url: "http://issolutions.esy.es/ma/www/php/update.php", 
+					url: "http://www.municipi.net/app/update.php", 
 					type: "POST",
 					data: visor.params,
 					success: function(){
@@ -636,7 +636,7 @@
                 visor.map.removeLayer(visor.totMarker);
                 $.ajax({
                     type: "POST",
-                    url: "http://issolutions.esy.es/ma/www/php/select.php",
+                    url: "http://www.municipi.net/app/select.php",
                     contentType: "application/json; charset=ISO-8859-1",
                     dataType: "json",
                     success: function( data ) {                   
@@ -662,7 +662,7 @@
                                             + '<div><b>'
                                             + punt.adreca
                                             + '</b></div>'
-                                            +    '<img width=150 onerror="alert(\'Pujant la imatge ...\')" src="http://issolutions.esy.es/ma/www/php/image/' 
+                                            +    '<img width=150 onerror="alert(\'Pujant la imatge ...\')" src="http://www.municipi.net/app/image/' 
                                             +       punt.imatge 
                                             +       '?d='
                                             +       new Date().getTime() // TODO: Per refrescar cache (optimitzar-ho amb onerror)                                            
@@ -677,7 +677,7 @@
             function creaImatgePujada(params) {
                 $('#divImatgePujada').prepend( '     <div class="divContImatge" style="width=100%;height:auto"> '
                                             + '         <div class="divContImatgeTitol" style="font-size:14px;height:30px;"> '
-                                            + '             Dades de la Imatge Pujada '
+                                            + '             Més dades'
                                             + '         </div> '
                                             + '         <div class="divContImatgeDades" style="font-size:12px;height:auto;margin-left:20px;margin-bottom:10px;"> '
                                             + '             <p><b> Nom: </b>' 
@@ -702,7 +702,7 @@
                                             + '             </p> '      
                                             + '         </div> '
                                             + '         <div class="divImatge" style="width:100%;height:auto;margin-left:20px; "> '
-                                            + '             <img width=300 src="http://issolutions.esy.es/ma/www/php/image/'                                   
+                                            + '             <img width=300 src="http://www.municipi.net/app/image/'                                   
                                             +                   params.imatge
                                             + '             "></img>'
                                             + '          </div> '
@@ -729,7 +729,7 @@
                                                     + '     <li>'
                                                     + '         <a href="#"> List Item '
                                                     +               i
-                                                    + '             <img width=70 src="http://issolutions.esy.es/ma/www/php/image/' 
+                                                    + '             <img width=70 src="http://www.municipi.net/app/image/' 
                                                     +                   punt.imatge 
  //                                                   + '#'
  //                                                   + new Date().getTime() // TODO: Per refrescar cache (optimitzar-ho amb on error)
@@ -778,7 +778,8 @@
     </head>
     
     <body style="font-family:arial">
-       <div data-role="page" id="portada" style="width:100%;height:100%;margin:0px;background-color:rgb(172,17,24);overflow:hidden">  
+        <!--------------------------------  Pàgina Portada ---------------------------------------->     
+        <!--div data-role="page" id="portada" style="width:100%;height:100%;margin:0px;background-color:rgb(172,17,24);overflow:hidden">  
             <div id="fotoPortada" style="width:100%;height:70%;">
 				<div style="height:10%;width100%"></div>
 					<div style="height:70%;width:100%;">
@@ -793,9 +794,9 @@
             <div style="float:left;height:100%;width:10%;"></div>
             <div style="text-align:center; color: rgb(255, 255, 255); font-size:2em; width: 100%; height: 30%;">
                 <div style="text-align:center; color: rgb(255, 255, 255); overflow:hidden;font-size:1.42em; margin-top:7%;margin-left:10%;width: 80%; height:auto;"> Notifica Avís </div>
-                <div style="text-align: center; overflow: hidden; color: rgb(255, 255, 255); width: 80%; margin-left: 10%; height: auto; font-size: 0.8em; line-height: 0.9em;"> Incidències a Sant Pere Pescador </div>
+                <div style="text-align: center; overflow: hidden; color: rgb(255, 255, 255); width: 80%; margin-left: 10%; height: auto; font-size: 0.8em; line-height: 0.9em;"> Situacions de risc pels animals </div>
             </div>
-        </div>
+        </div-->
         
         <!--------------------------------  Pàgina Mapa ------------------------------------------->     
         <div data-role="page" id="pageMap" > 
