@@ -380,7 +380,7 @@
 										+ '          </div>'                                        
 										+ '     </div>   '                               
                                         + '     <div style="float:right;height:95%;overflow:hidden;width: 56%;background-color:#ffffff"> '
-                                        + '         <img style="float:right;margin-right:1em;margin-top:0.5em; display:block;max-width:73%;max-height:90%;width:auto;height:auto;" src="http://www.municipi.net/app/image/'
+                                        + '         <img style="float:right;margin-right:1em;margin-top:0.5em; display:block;max-width:73%;max-height:90%;width:auto;height:auto;" src="http://www.municipi.net/app/php/image/'
                                         +               punt.imatge 
                                         + '         " />'
                                         + '     </div>   '
@@ -571,7 +571,7 @@
                 options.params = params;
 				visor.params = params;
                 var ft = new FileTransfer();
-                ft.upload(imageURI, encodeURI("http://www.municipi.net/app/upload.php"), ftWin, ftFail, options,true);                                       
+                ft.upload(imageURI, encodeURI("http://www.municipi.net/app/php/upload.php"), ftWin, ftFail, options,true);                                       
             } 
 
             function ftWin(r) {
@@ -662,7 +662,7 @@
                                             + '<div><b>'
                                             + punt.adreca
                                             + '</b></div>'
-                                            +    '<img width=150 onerror="alert(\'Pujant la imatge ...\')" src="http://www.municipi.net/app/image/' 
+                                            +    '<img width=150 onerror="alert(\'Pujant la imatge ...\')" src="http://www.municipi.net/app/php/image/' 
                                             +       punt.imatge 
                                             +       '?d='
                                             +       new Date().getTime() // TODO: Per refrescar cache (optimitzar-ho amb onerror)                                            
@@ -702,7 +702,7 @@
                                             + '             </p> '      
                                             + '         </div> '
                                             + '         <div class="divImatge" style="width:100%;height:auto;margin-left:20px; "> '
-                                            + '             <img width=300 src="http://www.municipi.net/app/image/'                                   
+                                            + '             <img width=300 src="http://www.municipi.net/app/php/image/'                                   
                                             +                   params.imatge
                                             + '             "></img>'
                                             + '          </div> '
@@ -729,7 +729,7 @@
                                                     + '     <li>'
                                                     + '         <a href="#"> List Item '
                                                     +               i
-                                                    + '             <img width=70 src="http://www.municipi.net/app/image/' 
+                                                    + '             <img width=70 src="http://www.municipi.net/app/php/image/' 
                                                     +                   punt.imatge 
  //                                                   + '#'
  //                                                   + new Date().getTime() // TODO: Per refrescar cache (optimitzar-ho amb on error)
