@@ -1,8 +1,9 @@
+ï»¿
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
-        <title>Animals en Risc</title>
-        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"> 
+        <title>Aj. Sant Pere Pescador</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" /> 
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
@@ -12,12 +13,11 @@
 		<script type="text/javascript">
 //			document.addEventListener('deviceready', function() {
 //				var url = 'https://www.google.com' // change to whatever you want
-//				cordova.InAppBrowser.open(url, '_self', 'location=no');
+//				   cordova.InAppBrowser.open(url, '_self', 'location=no');
 			//}, false)
 		</script>
         <style>               
             .leaflet-control-locate {display:none}
-            
             #portada{
                 width:100%;
                 height:100%;
@@ -160,7 +160,7 @@
                 'markerGroup': null,
                 'markerGroupDetail': null,
                 'llistaInicial': 0,
-                //'map' : {}, //  Objecte Leaflet del mapa per evitar problemes d'inicialització
+                //'map' : {}, //  Objecte Leaflet del mapa per evitar problemes d'inicialitzaciÃ³
                 'mapDetail' : {}, //    Objecte Leaflet del mapa Detall
                 'wpid' : 0,
                 'modeNavegacio' : null,
@@ -188,18 +188,18 @@
                 'data':{},
                 'adrecaOSM':null,
 				'params':null,
-                'primeraUbicació' :  1,
+                'primeraUbicaciÃ³' :  1,
 				'codiAvisVigent' : null
             };
             
-            //-- Paràmetres d'inicialització
+            //-- ParÃ metres d'inicialitzaciÃ³
             
             //-- Totes les pantalles
             
             $( window ).on( 'orientationchange', function( event ) {ajustaPortada();});                 
             
             
-            //-- Inicialització Portada     
+            //-- InicialitzaciÃ³ Portada     
             
             $( document ).on('beforepageshow' ,'#portada', function(){ 
                 $(window).bind('resize', function (){   ajustaFinestres();
@@ -232,7 +232,7 @@
             //-- Inicia llistaElements          
             $( document ).on('pagebeforeshow','#llistaElements', function(){
                 //ajustaFinestres();
-                //creaRelacioPunts(); Bloquejat l'accés al detall
+                //creaRelacioPunts(); Bloquejat l'accÃ©s al detall
             });         
             
             //function onDeviceReady() {
@@ -241,7 +241,7 @@
                 // treure navigator.geolocation.getCurrentPosition(successGeo, onErrorPlug, { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
             //}
             
-            //-- Intentar fer tots els ajustaments en aquesta funció
+            //-- Intentar fer tots els ajustaments en aquesta funciÃ³
             function ajustaFinestres(){         
                 var resizeTimer = null;         
                 if (resizeTimer) clearTimeout(resizeTimer);         
@@ -267,7 +267,7 @@
             
             function actualitzaFormulari(){ }
             //-- Funcions del mapa
-            //-- Inicialització del mapa 
+            //-- InicialitzaciÃ³ del mapa 
 			
             function inicialitzaMapa(){                 
  	
@@ -275,7 +275,7 @@
 					visor.map = L.map('map', { zoomControl:false, detectRetina:true });
 					visor.popup = L.popup();
 					var opcionsBase= 'google';
-					visor.map.setView([41.37, 2.15], 12);   
+					visor.map.setView([42.188, 3.0819], 12);   
 					
 					switch (opcionsBase){
 						case 'mapbox':           
@@ -298,7 +298,7 @@
 								attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
 									+
 									'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-									'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+									'Imagery Â© <a href="http://mapbox.com">Mapbox</a>',
 								id: 'examples.map-i875mjb7'
 							});
 							break;
@@ -330,7 +330,7 @@
                     
                     case 'buscaPosicio':
                         txtPeu =    ' <div style="width: 100%; margin-left: 5%; color: rgb(115, 115, 115); text-shadow: 0px 0px rgb(0, 0, 0); background-color: rgb(255, 255, 255); padding: 0.5em 0em 0.5em; height: 1.3em; margin-bottom: 0.2em; margin-top: 0.2em;">'
-                                   +    '    Buscant localització ... <i class="fa fa-spin fa-spinner"/>'
+                                   +    '    Buscant localitzaciÃ³ ... <i class="fa fa-spin fa-spinner"/>'
                                    +    ' </div>';
                         break;
 
@@ -343,7 +343,7 @@
                             var seguentFoto = foto + 1;
                             var anteriorFoto = foto - 1;
 							if ( punt.descripcio.length < 1 ){
-								punt.descripcio = 'Introduïu descripció';
+								punt.descripcio = 'IntroduÃ¯u descripciÃ³';
 							}
 							visor.codiAvisVigent = punt.codi;
 							txtPeu =      '   <div style="z-index:0;border-top: 2px solid #b9b900;width:100%;height:215px;overflow:hidden"> '                                 
@@ -380,7 +380,7 @@
 										+ '          </div>'                                        
 										+ '     </div>   '                               
                                         + '     <div style="float:right;height:95%;overflow:hidden;width: 56%;background-color:#ffffff"> '
-                                        + '         <img style="float:right;margin-right:1em;margin-top:0.5em; display:block;max-width:73%;max-height:90%;width:auto;height:auto;" src="http://issolutions.esy.es/ma/www/php/image/'
+                                        + '         <img style="float:right;margin-right:1em;margin-top:0.5em; display:block;max-width:73%;max-height:90%;width:auto;height:auto;" src="http://www.municipi.net/app/image/'
                                         +               punt.imatge 
                                         + '         " />'
                                         + '     </div>   '
@@ -404,7 +404,7 @@
             }
             
             function activaLocator(){
-			// Activa la localització del plugin de leaflet 
+			// Activa la localitzaciÃ³ del plugin de leaflet 
 				visor.locate = L.control.locate( {
 					position: 'topright',  // set the location of the control
 					drawCircle: true,  // controls whether a circle is drawn that shows the uncertainty about the location
@@ -428,11 +428,11 @@
 					},
 					showPopup: true, // display a popup when the user click on the inner marker
 					strings: {
-						title: "Troba la meva posició",  // title of the locate control
+						title: "Troba la meva posiciÃ³",  // title of the locate control
 						metersUnit: "meters", // string for metric units
 						feetUnit: "feet", // string for imperial units
-						popup: "Posició Actual",  // text to appear if user clicks on circle
-						outsideMapBoundsMsg: "Et trobes fora dels límits del mapa" // default message for onLocationOutsideMapBounds
+						popup: "PosiciÃ³ Actual",  // text to appear if user clicks on circle
+						outsideMapBoundsMsg: "Et trobes fora dels lÃ­mits del mapa" // default message for onLocationOutsideMapBounds
 					},
 					locateOptions: {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }  // define location options e.g enableHighAccuracy: true or maxZoom: 10
 				});
@@ -441,13 +441,13 @@
 				visor.locate.addTo(visor.map);
                 visor.locate.start();
 				
-				//-- Funció quan troba la posició
+				//-- FunciÃ³ quan troba la posiciÃ³
 				visor.map.on('locationfound', posicioTrobada);
 			}  			
 
-            // -- Recupera la posició actual i la introdueix a les variables corresponents
+            // -- Recupera la posiciÃ³ actual i la introdueix a les variables corresponents
             function posicioTrobada(e) {
-                //visor.alertaBuscantPosicio == 0 ? alert('BuscantPosició') : null;
+                //visor.alertaBuscantPosicio == 0 ? alert('BuscantPosiciÃ³') : null;
                 var latitude = e.latlng.lat;
                 var longitude = e.latlng.lng;
                 var estatAnterior = visor.posicioActual.trobat;
@@ -464,13 +464,13 @@
                 }
                 else {
                 } 
-                if ( visor.primeraUbicació ==  1){
+                if ( visor.primeraUbicaciÃ³ ==  1){
                     missatgePeuMapa('');
                     placeCamera(e);
-                    visor.primeraUbicació = 0;
+                    visor.primeraUbicaciÃ³ = 0;
                 }            
             } 
-            //-- Mostra la icona en el punt actual TODO: unificar funció anterior
+            //-- Mostra la icona en el punt actual TODO: unificar funciÃ³ anterior
 			
             function centraPosicio(punt,zoom){
                 visor.map.setView(punt, zoom);
@@ -493,10 +493,10 @@
                         .addTo(visor.map)
                         .bindPopup(
                             "<h2 style='font-family:Arial;font-size:1.5em;height:20px'>" 
-                            + ' La teva posició'  
+                            + ' La teva posiciÃ³'  
                             +  " <img width='30' src='images/troba.png' style='float:left;margin-right:2em'/ >" 
                             + "</h2>" 
-                            + ' Posició actual aproximada'                  
+                            + ' PosiciÃ³ actual aproximada'                  
                             );
                 }
             }
@@ -510,7 +510,7 @@
                 }
             }     
             
-            // /* Recupera el text de l'adreça propera segons OpenStreetMap            
+            // /* Recupera el text de l'adreÃ§a propera segons OpenStreetMap            
             function recuperaAdreca(punt){ 
                 $.getJSON("http://nominatim.openstreetmap.org/reverse?json_callback=?", 
                     { format: "json", lat: punt.lat, lon: punt.lng, zoom: 18, addressdetails: 1 },
@@ -524,7 +524,7 @@
                 alert(e.message);
             }
 
-            //-- Enviament de la imatge i actualització de la base de dades
+            //-- Enviament de la imatge i actualitzaciÃ³ de la base de dades
             /*
             function uploadFromGallery_2() {
                 //Retrieve image file location from specified source
@@ -562,7 +562,7 @@
                 params.codi= 'Joan';
                 params.usuari_codi = 'Gomis';
 				params.adreca = visor.adrecaOSM;
-                params.descripcio = 'Simulació de descripcio';
+                params.descripcio = 'SimulaciÃ³ de descripcio';
                 params.imatge = options.fileName;//file.name;
                 params.den_x = parseFloat(visor.posicioCamera.lng);
                 params.den_y = parseFloat(visor.posicioCamera.lat);
@@ -571,7 +571,7 @@
                 options.params = params;
 				visor.params = params;
                 var ft = new FileTransfer();
-                ft.upload(imageURI, encodeURI("http://www.municipi.net/app/php/upload.php"), ftWin, ftFail, options,true);                                       
+                ft.upload(imageURI, encodeURI("http://www.municipi.net/app/upload.php"), ftWin, ftFail, options,true);                                       
             } 
 
             function ftWin(r) {
@@ -579,7 +579,7 @@
                 console.log("Response = " + r.response);
                 console.log("Sent = " + r.bytesSent);
 				$.ajax({
-					url: "http://www.municipi.net/app/php/insert.php", 
+					url: "http://www.municipi.net/app/insert.php", 
 					type: "POST",
 					data: visor.params,
 					success: function(){
@@ -609,7 +609,7 @@
 				//;
 				//alert(visor.params.codi);
 				$.ajax({
-					url: "http://www.municipi.net/app/php//update.php", 
+					url: "http://www.municipi.net/app/update.php", 
 					type: "POST",
 					data: visor.params,
 					success: function(){
@@ -618,7 +618,7 @@
 						setTimeout(function(){missatgePeuMapa( 'mostraFoto', visor.data.length - 1 );}, 700);//creaImatgePujada(visor.params);
 					},
 					error: function(xhr, textStatus, errorThrown){
-						alert("Error detectat. Tona a introduir descripció." + xhr.responseText 
+						alert("Error detectat. Tona a introduir descripciÃ³." + xhr.responseText 
 							+ "\nstatus: " + textStatus 
 							+ "\nerror: " + errorThrown);
 					}                                       
@@ -636,7 +636,7 @@
                 visor.map.removeLayer(visor.totMarker);
                 $.ajax({
                     type: "POST",
-                    url: "http://www.municipi.net/app/php/select.php",
+                    url: "http://www.municipi.net/app/select.php",
                     contentType: "application/json; charset=ISO-8859-1",
                     dataType: "json",
                     success: function( data ) {                   
@@ -662,7 +662,7 @@
                                             + '<div><b>'
                                             + punt.adreca
                                             + '</b></div>'
-                                            +    '<img width=150 onerror="alert(\'Pujant la imatge ...\')" src="http://www.municipi.net/app/php/image/' 
+                                            +    '<img width=150 onerror="alert(\'Pujant la imatge ...\')" src="http://www.municipi.net/app/image/' 
                                             +       punt.imatge 
                                             +       '?d='
                                             +       new Date().getTime() // TODO: Per refrescar cache (optimitzar-ho amb onerror)                                            
@@ -677,7 +677,7 @@
             function creaImatgePujada(params) {
                 $('#divImatgePujada').prepend( '     <div class="divContImatge" style="width=100%;height:auto"> '
                                             + '         <div class="divContImatgeTitol" style="font-size:14px;height:30px;"> '
-                                            + '             Dades de la Imatge Pujada '
+                                            + '             MÃ©s dades'
                                             + '         </div> '
                                             + '         <div class="divContImatgeDades" style="font-size:12px;height:auto;margin-left:20px;margin-bottom:10px;"> '
                                             + '             <p><b> Nom: </b>' 
@@ -685,7 +685,7 @@
                                             + '             </p> '      
                                             + '         </div> '
                                             + '         <div class="divContImatgeDades" style="font-size:12px;height:auto;margin-left:20px;margin-bottom:10px;"> '
-                                            + '             <p><b> Adreça: </b>' 
+                                            + '             <p><b> AdreÃ§a: </b>' 
                                             +                   params.codi
                                             + '             </p> '      
                                             + '         </div> '
@@ -702,16 +702,16 @@
                                             + '             </p> '      
                                             + '         </div> '
                                             + '         <div class="divImatge" style="width:100%;height:auto;margin-left:20px; "> '
-                                            + '             <img width=300 src="http://www.municipi.net/app/php/image/'                                   
+                                            + '             <img width=300 src="http://www.municipi.net/app/image/'                                   
                                             +                   params.imatge
                                             + '             "></img>'
                                             + '          </div> '
                                             + '     </div>');
                                             
-                // $.mobile.changePage($('#imatgePujada'),'pop'); Per ara bloquejat - Nomostra les dades de la imatge pujada per deixar temps a que pugi a l'aplicació
+                // $.mobile.changePage($('#imatgePujada'),'pop'); Per ara bloquejat - Nomostra les dades de la imatge pujada per deixar temps a que pugi a l'aplicaciÃ³
             }
             
-            // Creació del llistat de punts 
+            // CreaciÃ³ del llistat de punts 
             function creaRelacioPunts(){
                 $.each(visor.data,function(i,punt){
                     /*var puntMapa = $('<div/>')
@@ -729,7 +729,7 @@
                                                     + '     <li>'
                                                     + '         <a href="#"> List Item '
                                                     +               i
-                                                    + '             <img width=70 src="http://www.municipi.net/app/php/image/' 
+                                                    + '             <img width=70 src="http://www.municipi.net/app/image/' 
                                                     +                   punt.imatge 
  //                                                   + '#'
  //                                                   + new Date().getTime() // TODO: Per refrescar cache (optimitzar-ho amb on error)
@@ -741,7 +741,7 @@
                 $('#relacioPuntsMapa').height($(window).height() - 250);    
             }
             
-            // Situar la icona de la càmera
+            // Situar la icona de la cÃ mera
             function placeCamera(e){
                 visor.map.removeLayer(visor.markerCamera);
                 var iconSizeX = 030;
@@ -760,7 +760,7 @@
                     .bindPopup(
                         "<h2 style='font-family:Arial;font-size:1.2em;height:auto;width:200px'>" 
                         +  " <img width='30' src='images/camera-icon.png' style='float:left;margin-right:2em'/ >"   
-                        + ' Indret on es farà la fotografia'  
+                        + ' Indret on es farÃ  la fotografia'  
                         + "</h2>" 
                         + ''                    
                         )
@@ -778,7 +778,7 @@
     </head>
     
     <body style="font-family:arial">
-        <!--------------------------------  Pàgina Portada ---------------------------------------->     
+        <!--------------------------------  PÃ gina Portada ---------------------------------------->     
         <!--div data-role="page" id="portada" style="width:100%;height:100%;margin:0px;background-color:rgb(172,17,24);overflow:hidden">  
             <div id="fotoPortada" style="width:100%;height:70%;">
 				<div style="height:10%;width100%"></div>
@@ -793,12 +793,12 @@
             </div>
             <div style="float:left;height:100%;width:10%;"></div>
             <div style="text-align:center; color: rgb(255, 255, 255); font-size:2em; width: 100%; height: 30%;">
-                <div style="text-align:center; color: rgb(255, 255, 255); overflow:hidden;font-size:1.42em; margin-top:7%;margin-left:10%;width: 80%; height:auto;"> Notifica Avís </div>
+                <div style="text-align:center; color: rgb(255, 255, 255); overflow:hidden;font-size:1.42em; margin-top:7%;margin-left:10%;width: 80%; height:auto;"> Notifica AvÃ­s </div>
                 <div style="text-align: center; overflow: hidden; color: rgb(255, 255, 255); width: 80%; margin-left: 10%; height: auto; font-size: 0.8em; line-height: 0.9em;"> Situacions de risc pels animals </div>
             </div>
         </div-->
         
-        <!--------------------------------  Pàgina Mapa ------------------------------------------->     
+        <!--------------------------------  PÃ gina Mapa ------------------------------------------->     
         <div data-role="page" id="pageMap" > 
             <!------------------ Header --------------->    
 			<div id="header" style="border-width: 0px; height:2.3em;background-color: rgb(172, 17, 24); color: rgb(250, 250, 250); font-family: inherit; font-size: 1.1em; font-weight: lighter; text-shadow: 0px 0px; z-index: 1; " role="banner" data-role="header" class="ui-header ui-bar-inherit">
@@ -809,10 +809,10 @@
 					
 					<div style="float: left; font-weight:bold; text-align: center; font-family: Verdana; color: rgb(255, 255, 255); width: 100%; height: 1.1em; margin-top: 0.3em;"> 
 						<a id="activa" href="#imatgePujada" data-transition="pop">	
-							Alerta Situació
+							Aj. SPP
 						</a>			
 				     </div>
-					<div style="clear: both; text-align: center; font-family: Verdana; color: rgb(255, 255, 255); font-size: 0.6em; width: 100%; height: 15px; margin-top: -1px;"> Risc Animal </div>
+					<div style="clear: both; text-align: center; font-family: Verdana; color: rgb(255, 255, 255); font-size: 0.6em; width: 100%; height: 15px; margin-top: -1px;"> IncidÃ¨ncies </div>
 				</div>
 				<div id="troba5" style="float: right; margin-top: -1.3em;height:24px ; font-size: 1.5em; width: 5%;margin-right: 9px;" onclick="navigator.app.exitApp();">
 					<i class="fa fa-close"></i>
@@ -870,7 +870,7 @@
 
 
         
-        <!--------------------------------  Pàgina Detall Element --------------------------------->        
+        <!--------------------------------  PÃ gina Detall Element --------------------------------->        
         <div data-role="page" data-dialog="true" id="llistaElements"> 
             <div data-role="header"  role="banner" id = "headerDetail" style="z-index: 1; box-shadow:0px 2px 6px #444444;">         
                 <!--div data-inline="true" value="on"  style="" checked="checked" type="radio" onclick=" visor.mapDetail.setView([visor.posicioActual.lat, visor.posicioActual.lng], 20);" href="#" class="ui-btn-right ui-btn ui-icon-navigation ui-btn-icon-left ui-shadow ui-corner-all "> Troba'm </div>    
@@ -900,7 +900,7 @@
                 </div>          
             </div-->            
         </div>
-        <!--  Pàgina Imatge Pujada -->      
+        <!--  PÃ gina Imatge Pujada -->      
         <div data-role="page" data-dialog="true" id="imatgePujada"> 
             <div data-role="header"  role="banner" id ="headerImatgePujada" style="z-index: 1; box-shadow:0px 2px 6px #444444;">                
                 <!--div data-inline="true" value="on"  style="" checked="checked" type="radio" onclick=" visor.mapDetail.setView([visor.posicioActual.lat, visor.posicioActual.lng], 20);" href="#" class="ui-btn-right ui-btn ui-icon-navigation ui-btn-icon-left ui-shadow ui-corner-all "> Troba'm </div>    
@@ -916,7 +916,7 @@
 
             <div data-role="content" id="contImatgePujada"> 
                 <form id="frmActDesc" data-ajax="false" >
-					<label for="textarea-1">Descripci&oacute;</label>
+					<label for="textarea-1">DescripciÃ³</label>
 					<textarea name="textarea-1" id="textarea-1"></textarea>
 					<a onclick="actualitzaDescripcio()" data-rel="back" data-theme="b" class="ui-btn ui-corner-all ui-icon-delete " href="#">
 						Enviar les dades
@@ -937,6 +937,6 @@
             </div-->            
         </div>  
     </body>
-</html> 
+</html>   
 
 
