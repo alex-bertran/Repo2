@@ -579,7 +579,7 @@
                 console.log("Response = " + r.response);
                 console.log("Sent = " + r.bytesSent);
 				$.ajax({
-					url: "http://www.municipi.net/app/insert.php", 
+					url: "http://www.municipi.net/app/php/insert.php", 
 					type: "POST",
 					data: visor.params,
 					success: function(){
@@ -609,7 +609,7 @@
 				//;
 				//alert(visor.params.codi);
 				$.ajax({
-					url: "http://www.municipi.net/app/update.php", 
+					url: "http://www.municipi.net/app/php/update.php", 
 					type: "POST",
 					data: visor.params,
 					success: function(){
@@ -636,7 +636,7 @@
                 visor.map.removeLayer(visor.totMarker);
                 $.ajax({
                     type: "POST",
-                    url: "http://www.municipi.net/app/select.php",
+                    url: "http://www.municipi.net/app/php/select.php",
                     contentType: "application/json; charset=ISO-8859-1",
                     dataType: "json",
                     success: function( data ) {                   
