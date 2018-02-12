@@ -6,7 +6,7 @@
         <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" /> 
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
         <link rel="stylesheet" href="js/locate/L.Control.Locate.min.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">    
@@ -147,7 +147,7 @@
         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>       
-        <script src="./js/locate/L.Control.Locate.min.js" ></script>
+        <script src="/js/locate/L.Control.Locate.min.js" ></script>
         <script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>         
         <script src="js/leaflet-plugins-master/layer/tile/Google.js"></script>          
         
@@ -380,7 +380,7 @@
 										+ '          </div>'                                        
 										+ '     </div>   '                               
                                         + '     <div style="float:right;height:95%;overflow:hidden;width: 56%;background-color:#ffffff"> '
-                                        + '         <img style="float:right;margin-right:1em;margin-top:0.5em; display:block;max-width:73%;max-height:90%;width:auto;height:auto;" src="http://www.municipi.net/app/php/image/'
+                                        + '         <img style="float:right;margin-right:1em;margin-top:0.5em; display:block;max-width:73%;max-height:90%;width:auto;height:auto;" src="https://www.municipi.net/app/php/image/'
                                         +               punt.imatge 
                                         + '         " />'
                                         + '     </div>   '
@@ -571,7 +571,7 @@
                 options.params = params;
 				visor.params = params;
                 var ft = new FileTransfer();
-                ft.upload(imageURI, encodeURI("http://www.municipi.net/app/php/upload.php"), ftWin, ftFail, options,true);                                       
+                ft.upload(imageURI, encodeURI("https://www.municipi.net/app/php/upload.php"), ftWin, ftFail, options,true);                                       
             } 
 
             function ftWin(r) {
@@ -579,7 +579,7 @@
                 console.log("Response = " + r.response);
                 console.log("Sent = " + r.bytesSent);
 				$.ajax({
-					url: "http://www.municipi.net/app/php/insert.php", 
+					url: "https://www.municipi.net/app/php/insert.php", 
 					type: "POST",
 					data: visor.params,
 					success: function(){
@@ -609,7 +609,7 @@
 				//;
 				//alert(visor.params.codi);
 				$.ajax({
-					url: "http://www.municipi.net/app/php/update.php", 
+					url: "https://www.municipi.net/app/php/update.php", 
 					type: "POST",
 					data: visor.params,
 					success: function(){
@@ -636,7 +636,7 @@
                 visor.map.removeLayer(visor.totMarker);
                 $.ajax({
                     type: "POST",
-                    url: "http://www.municipi.net/app/php/select.php",
+                    url: "https://www.municipi.net/app/php/select.php",
                     contentType: "application/json; charset=ISO-8859-1",
                     dataType: "json",
                     success: function( data ) {                   
@@ -662,7 +662,7 @@
                                             + '<div><b>'
                                             + punt.adreca
                                             + '</b></div>'
-                                            +    '<img width=150 onerror="alert(\'Pujant la imatge ...\')" src="http://www.municipi.net/app/php/image/' 
+                                            +    '<img width=150 onerror="alert(\'Pujant la imatge ...\')" src="https://www.municipi.net/app/php/image/' 
                                             +       punt.imatge 
                                             +       '?d='
                                             +       new Date().getTime() // TODO: Per refrescar cache (optimitzar-ho amb onerror)                                            
@@ -702,7 +702,7 @@
                                             + '             </p> '      
                                             + '         </div> '
                                             + '         <div class="divImatge" style="width:100%;height:auto;margin-left:20px; "> '
-                                            + '             <img width=300 src="http://www.municipi.net/app/php/image/'                                   
+                                            + '             <img width=300 src="https://www.municipi.net/app/php/image/'                                   
                                             +                   params.imatge
                                             + '             "></img>'
                                             + '          </div> '
@@ -729,7 +729,7 @@
                                                     + '     <li>'
                                                     + '         <a href="#"> List Item '
                                                     +               i
-                                                    + '             <img width=70 src="http://www.municipi.net/app/php/image/' 
+                                                    + '             <img width=70 src="https://www.municipi.net/app/php/image/' 
                                                     +                   punt.imatge 
  //                                                   + '#'
  //                                                   + new Date().getTime() // TODO: Per refrescar cache (optimitzar-ho amb on error)
@@ -938,5 +938,3 @@
         </div>  
     </body>
 </html>   
-
-
