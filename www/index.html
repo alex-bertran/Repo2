@@ -1,21 +1,15 @@
 ﻿
-<html>
-<head>
-    <title>MySqlJs test</title>
-</head>
 <script src="https://mysqljs.com/mysql.js"></script>
 <body>
 <pre id="output"></pre>
 <script>
     MySql.Execute(
-        "sql8.freemysqlhosting.net",
-        "sql8173720",
-        "S4EsfUDHt7",
-        "sql8173720",
-        "select * from Users",
+        "municipi.net",
+        "municipi_app",
+        "mImUVY2gmImUVY2g",
+        "municipi_app",
+        "select * from denuncia",
         function (data) {
         document.getElementById("output").innerHTML = JSON.stringify(data,null,2);
     });
 </script>
-</body>
-</html>
