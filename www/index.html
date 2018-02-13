@@ -1,4 +1,4 @@
-Ôªø<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
         <title>Animals en Risc</title>
@@ -156,7 +156,7 @@
                 'markerGroup': null,
                 'markerGroupDetail': null,
                 'llistaInicial': 0,
-                //'map' : {}, //  Objecte Leaflet del mapa per evitar problemes d'inicialitzaci√≥
+                //'map' : {}, //  Objecte Leaflet del mapa per evitar problemes d'inicialitzaciÛ
                 'mapDetail' : {}, //    Objecte Leaflet del mapa Detall
                 'wpid' : 0,
                 'modeNavegacio' : null,
@@ -184,18 +184,18 @@
                 'data':{},
                 'adrecaOSM':null,
 				'params':null,
-                'primeraUbicaci√≥' :  1,
+                'primeraUbicaciÛ' :  1,
 				'codiAvisVigent' : null
             };
             
-            //-- Par√†metres d'inicialitzaci√≥
+            //-- Par‡metres d'inicialitzaciÛ
             
             //-- Totes les pantalles
             
             $( window ).on( 'orientationchange', function( event ) {ajustaPortada();});                 
             
             
-            //-- Inicialitzaci√≥ Portada     
+            //-- InicialitzaciÛ Portada     
             
             $( document ).on('beforepageshow' ,'#portada', function(){ 
                 $(window).bind('resize', function (){   ajustaFinestres();
@@ -228,7 +228,7 @@
             //-- Inicia llistaElements          
             $( document ).on('pagebeforeshow','#llistaElements', function(){
                 //ajustaFinestres();
-                //creaRelacioPunts(); Bloquejat l'acc√©s al detall
+                //creaRelacioPunts(); Bloquejat l'accÈs al detall
             });         
             
             //function onDeviceReady() {
@@ -237,7 +237,7 @@
                 // treure navigator.geolocation.getCurrentPosition(successGeo, onErrorPlug, { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
             //}
             
-            //-- Intentar fer tots els ajustaments en aquesta funci√≥
+            //-- Intentar fer tots els ajustaments en aquesta funciÛ
             function ajustaFinestres(){         
                 var resizeTimer = null;         
                 if (resizeTimer) clearTimeout(resizeTimer);         
@@ -263,7 +263,7 @@
             
             function actualitzaFormulari(){ }
             //-- Funcions del mapa
-            //-- Inicialitzaci√≥ del mapa 
+            //-- InicialitzaciÛ del mapa 
 			
             function inicialitzaMapa(){                 
  	
@@ -294,7 +294,7 @@
 								attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
 									+
 									'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-									'Imagery ¬© <a href="http://mapbox.com">Mapbox</a>',
+									'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 								id: 'examples.map-i875mjb7'
 							});
 							break;
@@ -325,7 +325,7 @@
                     
                     case 'buscaPosicio':
                         txtPeu =    ' <div style="width: 100%; margin-left: 5%; color: rgb(115, 115, 115); text-shadow: 0px 0px rgb(0, 0, 0); background-color: rgb(255, 255, 255); padding: 0.5em 0em 0.5em; height: 1.3em; margin-bottom: 0.2em; margin-top: 0.2em;">'
-                                   +    '    Buscant localitzaci√≥ ... <i class="fa fa-spin fa-spinner"/>'
+                                   +    '    Buscant localitzaciÛ ... <i class="fa fa-spin fa-spinner"/>'
                                    +    ' </div>';
                         break;
                     case 'mostraFoto':
@@ -337,7 +337,7 @@
                             var seguentFoto = foto + 1;
                             var anteriorFoto = foto - 1;
 							if ( punt.descripcio.length < 1 ){
-								punt.descripcio = 'Introdu√Øu descripci√≥';
+								punt.descripcio = 'IntroduÔu descripciÛ';
 							}
 							visor.codiAvisVigent = punt.codi;
 							txtPeu =      '   <div style="z-index:0;border-top: 2px solid #b9b900;width:100%;height:215px;overflow:hidden"> '                                 
@@ -374,7 +374,7 @@
 										+ '          </div>'                                        
 										+ '     </div>   '                               
                                         + '     <div style="float:right;height:95%;overflow:hidden;width: 56%;background-color:#ffffff"> '
-                                        + '         <img style="float:right;margin-right:1em;margin-top:0.5em; display:block;max-width:73%;max-height:90%;width:auto;height:auto;" src="http://issolutions.esy.es/ma/www/php/image/'
+                                        + '         <img style="float:right;margin-right:1em;margin-top:0.5em; display:block;max-width:73%;max-height:90%;width:auto;height:auto;" src="http://www.municipi.net/app/php/image/'
                                         +               punt.imatge 
                                         + '         " />'
                                         + '     </div>   '
@@ -397,7 +397,7 @@
             }
             
             function activaLocator(){
-			// Activa la localitzaci√≥ del plugin de leaflet 
+			// Activa la localitzaciÛ del plugin de leaflet 
 				visor.locate = L.control.locate( {
 					position: 'topright',  // set the location of the control
 					drawCircle: true,  // controls whether a circle is drawn that shows the uncertainty about the location
@@ -421,11 +421,11 @@
 					},
 					showPopup: true, // display a popup when the user click on the inner marker
 					strings: {
-						title: "Troba la meva posici√≥",  // title of the locate control
+						title: "Troba la meva posiciÛ",  // title of the locate control
 						metersUnit: "meters", // string for metric units
 						feetUnit: "feet", // string for imperial units
-						popup: "Posici√≥ Actual",  // text to appear if user clicks on circle
-						outsideMapBoundsMsg: "Et trobes fora dels l√≠mits del mapa" // default message for onLocationOutsideMapBounds
+						popup: "PosiciÛ Actual",  // text to appear if user clicks on circle
+						outsideMapBoundsMsg: "Et trobes fora dels lÌmits del mapa" // default message for onLocationOutsideMapBounds
 					},
 					locateOptions: {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }  // define location options e.g enableHighAccuracy: true or maxZoom: 10
 				});
@@ -434,12 +434,12 @@
 				visor.locate.addTo(visor.map);
                 visor.locate.start();
 				
-				//-- Funci√≥ quan troba la posici√≥
+				//-- FunciÛ quan troba la posiciÛ
 				visor.map.on('locationfound', posicioTrobada);
 			}  			
-            // -- Recupera la posici√≥ actual i la introdueix a les variables corresponents
+            // -- Recupera la posiciÛ actual i la introdueix a les variables corresponents
             function posicioTrobada(e) {
-                //visor.alertaBuscantPosicio == 0 ? alert('BuscantPosici√≥') : null;
+                //visor.alertaBuscantPosicio == 0 ? alert('BuscantPosiciÛ') : null;
                 var latitude = e.latlng.lat;
                 var longitude = e.latlng.lng;
                 var estatAnterior = visor.posicioActual.trobat;
@@ -456,13 +456,13 @@
                 }
                 else {
                 } 
-                if ( visor.primeraUbicaci√≥ ==  1){
+                if ( visor.primeraUbicaciÛ ==  1){
                     missatgePeuMapa('');
                     placeCamera(e);
-                    visor.primeraUbicaci√≥ = 0;
+                    visor.primeraUbicaciÛ = 0;
                 }            
             } 
-            //-- Mostra la icona en el punt actual TODO: unificar funci√≥ anterior
+            //-- Mostra la icona en el punt actual TODO: unificar funciÛ anterior
 			
             function centraPosicio(punt,zoom){
                 visor.map.setView(punt, zoom);
@@ -485,10 +485,10 @@
                         .addTo(visor.map)
                         .bindPopup(
                             "<h2 style='font-family:Arial;font-size:1.5em;height:20px'>" 
-                            + ' La teva posici√≥'  
+                            + ' La teva posiciÛ'  
                             +  " <img width='30' src='images/troba.png' style='float:left;margin-right:2em'/ >" 
                             + "</h2>" 
-                            + ' Posici√≥ actual aproximada'                  
+                            + ' PosiciÛ actual aproximada'                  
                             );
                 }
             }
@@ -501,7 +501,7 @@
                 }
             }     
             
-            // /* Recupera el text de l'adre√ßa propera segons OpenStreetMap            
+            // /* Recupera el text de l'adreÁa propera segons OpenStreetMap            
             function recuperaAdreca(punt){ 
                 $.getJSON("http://nominatim.openstreetmap.org/reverse?json_callback=?", 
                     { format: "json", lat: punt.lat, lon: punt.lng, zoom: 18, addressdetails: 1 },
@@ -514,7 +514,7 @@
             function onLocationError(e) {
                 alert(e.message);
             }
-            //-- Enviament de la imatge i actualitzaci√≥ de la base de dades
+            //-- Enviament de la imatge i actualitzaciÛ de la base de dades
             /*
             function uploadFromGallery_2() {
                 //Retrieve image file location from specified source
@@ -552,7 +552,7 @@
                 params.codi= 'Joan';
                 params.usuari_codi = 'Gomis';
 				params.adreca = visor.adrecaOSM;
-                params.descripcio = 'Simulaci√≥ de descripcio';
+                params.descripcio = 'SimulaciÛ de descripcio';
                 params.imatge = options.fileName;//file.name;
                 params.den_x = parseFloat(visor.posicioCamera.lng);
                 params.den_y = parseFloat(visor.posicioCamera.lat);
@@ -561,14 +561,14 @@
                 options.params = params;
 				visor.params = params;
                 var ft = new FileTransfer();
-                ft.upload(imageURI, encodeURI("http://issolutions.esy.es/ma/www/php/upload.php"), ftWin, ftFail, options,true);                                       
+                ft.upload(imageURI, encodeURI("http://www.municipi.net/app/php/upload.php"), ftWin, ftFail, options,true);                                       
             } 
             function ftWin(r) {
                 console.log("Code = " + r.responseCode);
                 console.log("Response = " + r.response);
                 console.log("Sent = " + r.bytesSent);
 				$.ajax({
-					url: "http://issolutions.esy.es/ma/www/php/insert.php", 
+					url: "http://www.municipi.net/app/php/insert.php", 
 					type: "POST",
 					data: visor.params,
 					success: function(){
@@ -597,7 +597,7 @@
 				//;
 				//alert(visor.params.codi);
 				$.ajax({
-					url: "http://issolutions.esy.es/ma/www/php/update.php", 
+					url: "http://www.municipi.net/app/php/update.php", 
 					type: "POST",
 					data: visor.params,
 					success: function(){
@@ -606,7 +606,7 @@
 						setTimeout(function(){missatgePeuMapa( 'mostraFoto', visor.data.length - 1 );}, 700);//creaImatgePujada(visor.params);
 					},
 					error: function(xhr, textStatus, errorThrown){
-						alert("Error detectat. Tona a introduir descripci√≥." + xhr.responseText 
+						alert("Error detectat. Tona a introduir descripciÛ." + xhr.responseText 
 							+ "\nstatus: " + textStatus 
 							+ "\nerror: " + errorThrown);
 					}                                       
@@ -623,7 +623,7 @@
                 visor.map.removeLayer(visor.totMarker);
                 $.ajax({
                     type: "POST",
-                    url: "http://issolutions.esy.es/ma/www/php/select.php",
+                    url: "http://www.municipi.net/app/php/select.php",
                     contentType: "application/json; charset=ISO-8859-1",
                     dataType: "json",
                     success: function( data ) {                   
@@ -649,7 +649,7 @@
                                             + '<div><b>'
                                             + punt.adreca
                                             + '</b></div>'
-                                            +    '<img width=150 onerror="alert(\'Pujant la imatge ...\')" src="http://issolutions.esy.es/ma/www/php/image/' 
+                                            +    '<img width=150 onerror="alert(\'Pujant la imatge ...\')" src="http://www.municipi.net/app/php/image/' 
                                             +       punt.imatge 
                                             +       '?d='
                                             +       new Date().getTime() // TODO: Per refrescar cache (optimitzar-ho amb onerror)                                            
@@ -672,7 +672,7 @@
                                             + '             </p> '      
                                             + '         </div> '
                                             + '         <div class="divContImatgeDades" style="font-size:12px;height:auto;margin-left:20px;margin-bottom:10px;"> '
-                                            + '             <p><b> Adre√ßa: </b>' 
+                                            + '             <p><b> AdreÁa: </b>' 
                                             +                   params.codi
                                             + '             </p> '      
                                             + '         </div> '
@@ -689,16 +689,16 @@
                                             + '             </p> '      
                                             + '         </div> '
                                             + '         <div class="divImatge" style="width:100%;height:auto;margin-left:20px; "> '
-                                            + '             <img width=300 src="http://issolutions.esy.es/ma/www/php/image/'                                   
+                                            + '             <img width=300 src="http://www.municipi.net/app/php/image/'                                   
                                             +                   params.imatge
                                             + '             "></img>'
                                             + '          </div> '
                                             + '     </div>');
                                             
-                // $.mobile.changePage($('#imatgePujada'),'pop'); Per ara bloquejat - Nomostra les dades de la imatge pujada per deixar temps a que pugi a l'aplicaci√≥
+                // $.mobile.changePage($('#imatgePujada'),'pop'); Per ara bloquejat - Nomostra les dades de la imatge pujada per deixar temps a que pugi a l'aplicaciÛ
             }
             
-            // Creaci√≥ del llistat de punts 
+            // CreaciÛ del llistat de punts 
             function creaRelacioPunts(){
                 $.each(visor.data,function(i,punt){
                     /*var puntMapa = $('<div/>')
@@ -716,7 +716,7 @@
                                                     + '     <li>'
                                                     + '         <a href="#"> List Item '
                                                     +               i
-                                                    + '             <img width=70 src="http://issolutions.esy.es/ma/www/php/image/' 
+                                                    + '             <img width=70 src="http://www.municipi.net/app/php/image/' 
                                                     +                   punt.imatge 
  //                                                   + '#'
  //                                                   + new Date().getTime() // TODO: Per refrescar cache (optimitzar-ho amb on error)
@@ -728,7 +728,7 @@
                 $('#relacioPuntsMapa').height($(window).height() - 250);    
             }
             
-            // Situar la icona de la c√†mera
+            // Situar la icona de la c‡mera
             function placeCamera(e){
                 visor.map.removeLayer(visor.markerCamera);
                 var iconSizeX = 030;
@@ -746,7 +746,7 @@
                     .bindPopup(
                         "<h2 style='font-family:Arial;font-size:1.2em;height:auto;width:200px'>" 
                         +  " <img width='30' src='images/camera-icon.png' style='float:left;margin-right:2em'/ >"   
-                        + ' Indret on es far√† la fotografia'  
+                        + ' Indret on es far‡ la fotografia'  
                         + "</h2>" 
                         + ''                    
                         )
@@ -762,7 +762,7 @@
     </head>
     
     <body style="font-family:arial">
-        <!--------------------------------  P√†gina Portada ---------------------------------------->     
+        <!--------------------------------  P‡gina Portada ---------------------------------------->     
         <!--div data-role="page" id="portada" style="width:100%;height:100%;margin:0px;background-color:rgb(172,17,24);overflow:hidden">  
             <div id="fotoPortada" style="width:100%;height:70%;">
 				<div style="height:10%;width100%"></div>
@@ -777,12 +777,12 @@
             </div>
             <div style="float:left;height:100%;width:10%;"></div>
             <div style="text-align:center; color: rgb(255, 255, 255); font-size:2em; width: 100%; height: 30%;">
-                <div style="text-align:center; color: rgb(255, 255, 255); overflow:hidden;font-size:1.42em; margin-top:7%;margin-left:10%;width: 80%; height:auto;"> Notifica Av√≠s </div>
+                <div style="text-align:center; color: rgb(255, 255, 255); overflow:hidden;font-size:1.42em; margin-top:7%;margin-left:10%;width: 80%; height:auto;"> Notifica AvÌs </div>
                 <div style="text-align: center; overflow: hidden; color: rgb(255, 255, 255); width: 80%; margin-left: 10%; height: auto; font-size: 0.8em; line-height: 0.9em;"> Situacions de risc pels animals </div>
             </div>
         </div-->
         
-        <!--------------------------------  P√†gina Mapa ------------------------------------------->     
+        <!--------------------------------  P‡gina Mapa ------------------------------------------->     
         <div data-role="page" id="pageMap" > 
             <!------------------ Header --------------->    
 			<div id="header" style="border-width: 0px; height:2.3em;background-color: rgb(172, 17, 24); color: rgb(250, 250, 250); font-family: inherit; font-size: 1.1em; font-weight: lighter; text-shadow: 0px 0px; z-index: 1; " role="banner" data-role="header" class="ui-header ui-bar-inherit">
@@ -793,7 +793,7 @@
 					
 					<div style="float: left; font-weight:bold; text-align: center; font-family: Verdana; color: rgb(255, 255, 255); width: 100%; height: 1.1em; margin-top: 0.3em;"> 
 						<a id="activa" href="#imatgePujada" data-transition="pop">	
-							Alerta Situaci√≥
+							Alerta SituaciÛ
 						</a>			
 				     </div>
 					<div style="clear: both; text-align: center; font-family: Verdana; color: rgb(255, 255, 255); font-size: 0.6em; width: 100%; height: 15px; margin-top: -1px;"> Risc Animal </div>
@@ -850,7 +850,7 @@
             </div>
         </div>
         
-        <!--------------------------------  P√†gina Detall Element --------------------------------->        
+        <!--------------------------------  P‡gina Detall Element --------------------------------->        
         <div data-role="page" data-dialog="true" id="llistaElements"> 
             <div data-role="header"  role="banner" id = "headerDetail" style="z-index: 1; box-shadow:0px 2px 6px #444444;">         
                 <!--div data-inline="true" value="on"  style="" checked="checked" type="radio" onclick=" visor.mapDetail.setView([visor.posicioActual.lat, visor.posicioActual.lng], 20);" href="#" class="ui-btn-right ui-btn ui-icon-navigation ui-btn-icon-left ui-shadow ui-corner-all "> Troba'm </div>    
@@ -880,7 +880,7 @@
                 </div>          
             </div-->            
         </div>
-        <!--  P√†gina Imatge Pujada -->      
+        <!--  P‡gina Imatge Pujada -->      
         <div data-role="page" data-dialog="true" id="imatgePujada"> 
             <div data-role="header"  role="banner" id ="headerImatgePujada" style="z-index: 1; box-shadow:0px 2px 6px #444444;">                
                 <!--div data-inline="true" value="on"  style="" checked="checked" type="radio" onclick=" visor.mapDetail.setView([visor.posicioActual.lat, visor.posicioActual.lng], 20);" href="#" class="ui-btn-right ui-btn ui-icon-navigation ui-btn-icon-left ui-shadow ui-corner-all "> Troba'm </div>    
@@ -896,7 +896,7 @@
 
             <div data-role="content" id="contImatgePujada"> 
                 <form id="frmActDesc" data-ajax="false" >
-					<label for="textarea-1">Descripci√≥</label>
+					<label for="textarea-1">Descripci&oacute;</label>
 					<textarea name="textarea-1" id="textarea-1"></textarea>
 					<a onclick="actualitzaDescripcio()" data-rel="back" data-theme="b" class="ui-btn ui-corner-all ui-icon-delete " href="#">
 						Enviar les dades
