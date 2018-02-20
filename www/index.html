@@ -374,7 +374,7 @@
 										+ '          </div>'                                        
 										+ '     </div>   '                               
                                         + '     <div style="float:right;height:95%;overflow:hidden;width: 56%;background-color:#ffffff"> '
-                                        + '         <img style="float:right;margin-right:1em;margin-top:0.5em; display:block;max-width:73%;max-height:90%;width:auto;height:auto;" src="http://www.municipi.net/app/php/image/'
+                                        + '         <img style="float:right;margin-right:1em;margin-top:0.5em; display:block;max-width:73%;max-height:90%;width:auto;height:auto;" src="http://www.municipi.net/app2/php/image/'
                                         +               punt.imatge 
                                         + '         " />'
                                         + '     </div>   '
@@ -561,14 +561,14 @@
                 options.params = params;
 				visor.params = params;
                 var ft = new FileTransfer();
-                ft.upload(imageURI, encodeURI("http://www.municipi.net/app/php/upload.php"), ftWin, ftFail, options,true);                                       
+                ft.upload(imageURI, encodeURI("http://www.municipi.net/app2/php/upload.php"), ftWin, ftFail, options,true);                                       
             } 
             function ftWin(r) {
                 console.log("Code = " + r.responseCode);
                 console.log("Response = " + r.response);
                 console.log("Sent = " + r.bytesSent);
 				$.ajax({
-					url: "http://www.municipi.net/app/php/insert.php", 
+					url: "http://www.municipi.net/app2/php/insert.php", 
 					type: "POST",
 					data: visor.params,
 					success: function(){
@@ -597,7 +597,7 @@
 				//;
 				//alert(visor.params.codi);
 				$.ajax({
-					url: "http://www.municipi.net/app/php/update.php", 
+					url: "http://www.municipi.net/app2/php/update.php", 
 					type: "POST",
 					data: visor.params,
 					success: function(){
@@ -623,7 +623,7 @@
                 visor.map.removeLayer(visor.totMarker);
                 $.ajax({
                     type: "POST",
-                    url: "http://www.municipi.net/app/php/select.php",
+                    url: "http://www.municipi.net/app2/php/select.php",
                     contentType: "application/json; charset=ISO-8859-1",
                     dataType: "json",
                     success: function( data ) {                   
@@ -649,7 +649,7 @@
                                             + '<div><b>'
                                             + punt.adreca
                                             + '</b></div>'
-                                            +    '<img width=150 onerror="alert(\'Pujant la imatge ...\')" src="http://www.municipi.net/app/php/image/' 
+                                            +    '<img width=150 onerror="alert(\'Pujant la imatge ...\')" src="http://www.municipi.net/app2/php/image/' 
                                             +       punt.imatge 
                                             +       '?d='
                                             +       new Date().getTime() // TODO: Per refrescar cache (optimitzar-ho amb onerror)                                            
@@ -689,7 +689,7 @@
                                             + '             </p> '      
                                             + '         </div> '
                                             + '         <div class="divImatge" style="width:100%;height:auto;margin-left:20px; "> '
-                                            + '             <img width=300 src="http://www.municipi.net/app/php/image/'                                   
+                                            + '             <img width=300 src="http://www.municipi.net/app2/php/image/'                                   
                                             +                   params.imatge
                                             + '             "></img>'
                                             + '          </div> '
@@ -716,7 +716,7 @@
                                                     + '     <li>'
                                                     + '         <a href="#"> List Item '
                                                     +               i
-                                                    + '             <img width=70 src="http://www.municipi.net/app/php/image/' 
+                                                    + '             <img width=70 src="http://www.municipi.net/app2/php/image/' 
                                                     +                   punt.imatge 
  //                                                   + '#'
  //                                                   + new Date().getTime() // TODO: Per refrescar cache (optimitzar-ho amb on error)
