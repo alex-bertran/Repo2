@@ -1,6 +1,8 @@
 <html>
 
 <head>
+<meta http-equiv="Content-Security-Policy" content="default-src gap: file://* *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: 'unsafe-inline'; connect-src * 'unsafe-inline'; frame-src *;" />
+
     <link rel="stylesheet" type="text/css" href="css/ionic.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
@@ -33,6 +35,33 @@
             return false;
         });
     });
+    </script>
+    
+    <script type="text/javascript">
+function myPosition() {  
+  var options = {  
+  enableHighAccuracy: true,  
+  maximumAge: 3600000  
+   }  
+   var watchID = navigator.geolocation.getCurrentPosition(onSuccess2, onError2, options);  
+  
+  
+   function onSuccess2(position) {  
+  alert('Latitude: '          + position.coords.latitude          + '\n' +  
+'Longitude: '         + position.coords.longitude         + '\n' +  
+'Altitude: '          + position.coords.altitude          + '\n' +  
+'Accuracy: '          + position.coords.accuracy          + '\n' +  
+'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +  
+'Heading: '           + position.coords.heading           + '\n' +  
+'Speed: '             + position.coords.speed             + '\n' +  
+'Timestamp: '         + position.timestamp                + '\n');  
+   };  
+  
+  
+   function onError2(error) {  
+  alert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n');  
+   }  
+}  
     </script>
 </head>
 
