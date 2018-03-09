@@ -41,7 +41,7 @@
 function myPosition() {  
   var options = {  
   enableHighAccuracy: true,  
-  maximumAge: 3600000  
+  maximumAge:10000  
    }  
    var watchID = navigator.geolocation.getCurrentPosition(onSuccess2, onError2, options);  
   
@@ -76,7 +76,7 @@ function myPosition() {
     <div class="list">
         <input type="hidden" id="id" value="" />
         <div class="item">
-            <label>Title</label>
+            <label>Titlee</label>
             <input type="text" id="title" value="" />
         </div>
         <div class="item">
