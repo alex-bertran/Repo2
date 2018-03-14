@@ -44,4 +44,6 @@
     <engine name="ios" spec="latest" />
     <engine name="windows" spec="latest" />
 
+    <icon src="icon.png" />
+
 </widget>
