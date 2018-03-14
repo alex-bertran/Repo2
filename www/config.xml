@@ -21,7 +21,9 @@
 
     <platform name="android">
         <config-file parent="/*" target="AndroidManifest.xml">     
-	        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> 
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
         </config-file>
     </platform>
     <!--author href="http://phonegap.com" email="support@phonegap.com">
