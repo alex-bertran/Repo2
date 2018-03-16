@@ -1,23 +1,139 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-    <head>
-        <title>Animals en Risc</title>
-        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<head>
+         <title>Aj. SPP</title>
+         <title>Aj. Sant Pere Pescador</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src * gap://ready file:; style-src 'self' 'unsafe-inline'; img-src * 'self' data:; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" /> 
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
         <link rel="stylesheet" href="js/locate/L.Control.Locate.min.css" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">    
-		<script type="text/javascript">
-//			document.addEventListener('deviceready', function() {
-//				var url = 'https://www.google.com' // change to whatever you want
-//				cordova.InAppBrowser.open(url, '_self', 'location=no');
-			//}, false)
-		</script>
-        <style>               
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> 
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    
+        <script src="phonegap.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>       
+        <script src="./js/locate/L.Control.Locate.min.js" ></script>
+        <script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>         
+        <script src="js/leaflet-plugins-master/layer/tile/Google.js"></script>    
+        
+    <style type="text/css">
+        body,
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+
+        body.ios{
+            margin-top: 20px;
+        }
+
+        body:not(.android) .android-only,
+        body:not(.ios) .ios-only,
+        body:not(.windows) .windows-only{
+            display: none;
+        }
+
+        .os-conditional,
+        .settings button.os-conditional{
+            display: none;
+        }
+
+        body.android .os-conditional.android,
+        body.ios .os-conditional.ios,
+        body.windows .os-conditional.windows,
+        body.android .settings button.os-conditional.android,
+        body.ios .settings button.os-conditional.ios,
+        body.windows .settings button.os-conditional.windows{
+            display: block;
+        }
+
+
+        h2{
+            text-align: center;
+            margin-top: 0;
+            padding-top: 0;
+        }
+        li{
+            list-style: none;
+            clear: right;
+            padding: 0;
+            margin: 12px 0 0 4px;
+        }
+        li span.name{
+
+        }
+        li span.state,
+        li span.value{
+            float: right;
+            padding: 2px;
+        }
+        li span.on{
+            background-color: green;
+        }
+        li span.off{
+            background-color: red;
+        }
+
+        li span.on,
+        li.off span.on,
+        li.on span.off{
+            display: none;
+        }
+
+        li.on span.on{
+            display: list-item !important;
+        }
+
+        .settings{
+            border-top: 1px solid #000;
+            margin-top: 24px;
+            padding-top: 24px;
+            width: 100%;
+        }
+
+        .settings button,
+        .settings select{
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 24px;
+        }
+
+        .disabled{
+            color: #cccccc;
+        }
+
+        #request-external-sd-details-results{
+            display: none;
+            margin-top: 12px;
+            border-top: 1px solid #000;
+            width: 100%;
+            word-break: break-word;
+        }
+        #request-external-sd-details-results p{
+            padding: 12px;
+        }
+        #write-external-sd-file{
+            display: none;
+        }
+
+        #request-remote-notifications{
+            border: 1px solid #ccc;
+            margin: 0 12px;
+            padding-top: 12px;
+        }
+
+        #request-remote-notifications *{
+            text-align: center;
+        }
             .leaflet-control-locate {display:none}
-            
             #portada{
                 width:100%;
                 height:100%;
@@ -136,19 +252,9 @@
             .cubPetitUnitat {margin-bottom:7px;font-size:0.6em;margin-top:0em;height:10px;font-family:novaFont }
             .cubsContenidor { width:100%;height:125px;clear:both;border-bottom: 1px dotted #dddddd;overflow:hidden; padding-bottom:4px;}
             .iconWrapper { float:right;margin-right:30px;margin-top:15px}
-            
-            
-        </style>
-      
-		<script src="phonegap.js"></script>
-        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>       
-        <script src="./js/locate/L.Control.Locate.min.js" ></script>
-        <script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>         
-        <script src="js/leaflet-plugins-master/layer/tile/Google.js"></script>          
-        
-        <script type="text/javascript"> 
+    </style>
+    
+     <script type="text/javascript"> 
             var visor = {
                 'actiu' : 0,
                 'markerGroupPosActual': null,
@@ -156,7 +262,7 @@
                 'markerGroup': null,
                 'markerGroupDetail': null,
                 'llistaInicial': 0,
-                //'map' : {}, //  Objecte Leaflet del mapa per evitar problemes d'inicialització
+                //'map' : {}, //  Objecte Leaflet del mapa per evitar problemes d'inicialitzaciÃ³
                 'mapDetail' : {}, //    Objecte Leaflet del mapa Detall
                 'wpid' : 0,
                 'modeNavegacio' : null,
@@ -184,18 +290,18 @@
                 'data':{},
                 'adrecaOSM':null,
 				'params':null,
-                'primeraUbicació' :  1,
+                'primeraUbicaciÃ³' :  1,
 				'codiAvisVigent' : null
             };
             
-            //-- Paràmetres d'inicialització
+            //-- ParÃ metres d'inicialitzaciÃ³
             
             //-- Totes les pantalles
             
             $( window ).on( 'orientationchange', function( event ) {ajustaPortada();});                 
             
             
-            //-- Inicialització Portada     
+            //-- InicialitzaciÃ³ Portada     
             
             $( document ).on('beforepageshow' ,'#portada', function(){ 
                 $(window).bind('resize', function (){   ajustaFinestres();
@@ -228,7 +334,7 @@
             //-- Inicia llistaElements          
             $( document ).on('pagebeforeshow','#llistaElements', function(){
                 //ajustaFinestres();
-                //creaRelacioPunts(); Bloquejat l'accés al detall
+                //creaRelacioPunts(); Bloquejat l'accÃ©s al detall
             });         
             
             //function onDeviceReady() {
@@ -237,7 +343,7 @@
                 // treure navigator.geolocation.getCurrentPosition(successGeo, onErrorPlug, { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
             //}
             
-            //-- Intentar fer tots els ajustaments en aquesta funció
+            //-- Intentar fer tots els ajustaments en aquesta funciÃ³
             function ajustaFinestres(){         
                 var resizeTimer = null;         
                 if (resizeTimer) clearTimeout(resizeTimer);         
@@ -263,7 +369,7 @@
             
             function actualitzaFormulari(){ }
             //-- Funcions del mapa
-            //-- Inicialització del mapa 
+            //-- InicialitzaciÃ³ del mapa 
 			
             function inicialitzaMapa(){                 
  	
@@ -271,7 +377,7 @@
 					visor.map = L.map('map', { zoomControl:false, detectRetina:true });
 					visor.popup = L.popup();
 					var opcionsBase= 'google';
-					visor.map.setView([41.37, 2.15], 12);   
+					visor.map.setView([42.188, 3.0819], 12);   
 					
 					switch (opcionsBase){
 						case 'mapbox':           
@@ -294,7 +400,7 @@
 								attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
 									+
 									'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-									'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+									'Imagery Â© <a href="http://mapbox.com">Mapbox</a>',
 								id: 'examples.map-i875mjb7'
 							});
 							break;
@@ -325,7 +431,7 @@
                     
                     case 'buscaPosicio':
                         txtPeu =    ' <div style="width: 100%; margin-left: 5%; color: rgb(115, 115, 115); text-shadow: 0px 0px rgb(0, 0, 0); background-color: rgb(255, 255, 255); padding: 0.5em 0em 0.5em; height: 1.3em; margin-bottom: 0.2em; margin-top: 0.2em;">'
-                                   +    '    Buscant localització ... <i class="fa fa-spin fa-spinner"/>'
+                                   +    '    Buscant localitzaciÃ³ ... <i class="fa fa-spin fa-spinner"/>'
                                    +    ' </div>';
                         break;
                     case 'mostraFoto':
@@ -337,7 +443,7 @@
                             var seguentFoto = foto + 1;
                             var anteriorFoto = foto - 1;
 							if ( punt.descripcio.length < 1 ){
-								punt.descripcio = 'Introduïu descripció';
+								punt.descripcio = 'IntroduÃ¯u descripciÃ³';
 							}
 							visor.codiAvisVigent = punt.codi;
 							txtPeu =      '   <div style="z-index:0;border-top: 2px solid #b9b900;width:100%;height:215px;overflow:hidden"> '                                 
@@ -397,7 +503,7 @@
             }
             
             function activaLocator(){
-			// Activa la localització del plugin de leaflet 
+			// Activa la localitzaciÃ³ del plugin de leaflet 
 				visor.locate = L.control.locate( {
 					position: 'topright',  // set the location of the control
 					drawCircle: true,  // controls whether a circle is drawn that shows the uncertainty about the location
@@ -421,11 +527,11 @@
 					},
 					showPopup: true, // display a popup when the user click on the inner marker
 					strings: {
-						title: "Troba la meva posició",  // title of the locate control
+						title: "Troba la meva posiciÃ³",  // title of the locate control
 						metersUnit: "meters", // string for metric units
 						feetUnit: "feet", // string for imperial units
-						popup: "Posició Actual",  // text to appear if user clicks on circle
-						outsideMapBoundsMsg: "Et trobes fora dels límits del mapa" // default message for onLocationOutsideMapBounds
+						popup: "PosiciÃ³ Actual",  // text to appear if user clicks on circle
+						outsideMapBoundsMsg: "Et trobes fora dels lÃ­mits del mapa" // default message for onLocationOutsideMapBounds
 					},
 					locateOptions: {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }  // define location options e.g enableHighAccuracy: true or maxZoom: 10
 				});
@@ -434,12 +540,12 @@
 				visor.locate.addTo(visor.map);
                 visor.locate.start();
 				
-				//-- Funció quan troba la posició
+				//-- FunciÃ³ quan troba la posiciÃ³
 				visor.map.on('locationfound', posicioTrobada);
 			}  			
-            // -- Recupera la posició actual i la introdueix a les variables corresponents
+            // -- Recupera la posiciÃ³ actual i la introdueix a les variables corresponents
             function posicioTrobada(e) {
-                //visor.alertaBuscantPosicio == 0 ? alert('BuscantPosició') : null;
+                //visor.alertaBuscantPosicio == 0 ? alert('BuscantPosiciÃ³') : null;
                 var latitude = e.latlng.lat;
                 var longitude = e.latlng.lng;
                 var estatAnterior = visor.posicioActual.trobat;
@@ -456,13 +562,13 @@
                 }
                 else {
                 } 
-                if ( visor.primeraUbicació ==  1){
+                if ( visor.primeraUbicaciÃ³ ==  1){
                     missatgePeuMapa('');
                     placeCamera(e);
-                    visor.primeraUbicació = 0;
+                    visor.primeraUbicaciÃ³ = 0;
                 }            
             } 
-            //-- Mostra la icona en el punt actual TODO: unificar funció anterior
+            //-- Mostra la icona en el punt actual TODO: unificar funciÃ³ anterior
 			
             function centraPosicio(punt,zoom){
                 visor.map.setView(punt, zoom);
@@ -485,10 +591,10 @@
                         .addTo(visor.map)
                         .bindPopup(
                             "<h2 style='font-family:Arial;font-size:1.5em;height:20px'>" 
-                            + ' La teva posició'  
+                            + ' La teva posiciÃ³'  
                             +  " <img width='30' src='images/troba.png' style='float:left;margin-right:2em'/ >" 
                             + "</h2>" 
-                            + ' Posició actual aproximada'                  
+                            + ' PosiciÃ³ actual aproximada'                  
                             );
                 }
             }
@@ -501,7 +607,7 @@
                 }
             }     
             
-            // /* Recupera el text de l'adreça propera segons OpenStreetMap            
+            // /* Recupera el text de l'adreÃ§a propera segons OpenStreetMap            
             function recuperaAdreca(punt){ 
                 $.getJSON("http://nominatim.openstreetmap.org/reverse?json_callback=?", 
                     { format: "json", lat: punt.lat, lon: punt.lng, zoom: 18, addressdetails: 1 },
@@ -514,7 +620,7 @@
             function onLocationError(e) {
                 alert(e.message);
             }
-            //-- Enviament de la imatge i actualització de la base de dades
+            //-- Enviament de la imatge i actualitzaciÃ³ de la base de dades
             /*
             function uploadFromGallery_2() {
                 //Retrieve image file location from specified source
@@ -552,7 +658,7 @@
                 params.codi= 'Joan';
                 params.usuari_codi = 'Gomis';
 				params.adreca = visor.adrecaOSM;
-                params.descripcio = 'Simulació de descripcio';
+                params.descripcio = 'SimulaciÃ³ de descripcio';
                 params.imatge = options.fileName;//file.name;
                 params.den_x = parseFloat(visor.posicioCamera.lng);
                 params.den_y = parseFloat(visor.posicioCamera.lat);
@@ -606,7 +712,7 @@
 						setTimeout(function(){missatgePeuMapa( 'mostraFoto', visor.data.length - 1 );}, 700);//creaImatgePujada(visor.params);
 					},
 					error: function(xhr, textStatus, errorThrown){
-						alert("Error detectat. Tona a introduir descripció." + xhr.responseText 
+						alert("Error detectat. Tona a introduir descripciÃ³." + xhr.responseText 
 							+ "\nstatus: " + textStatus 
 							+ "\nerror: " + errorThrown);
 					}                                       
@@ -672,7 +778,7 @@
                                             + '             </p> '      
                                             + '         </div> '
                                             + '         <div class="divContImatgeDades" style="font-size:12px;height:auto;margin-left:20px;margin-bottom:10px;"> '
-                                            + '             <p><b> Adreça: </b>' 
+                                            + '             <p><b> AdreÃ§a: </b>' 
                                             +                   params.codi
                                             + '             </p> '      
                                             + '         </div> '
@@ -695,10 +801,10 @@
                                             + '          </div> '
                                             + '     </div>');
                                             
-                // $.mobile.changePage($('#imatgePujada'),'pop'); Per ara bloquejat - Nomostra les dades de la imatge pujada per deixar temps a que pugi a l'aplicació
+                // $.mobile.changePage($('#imatgePujada'),'pop'); Per ara bloquejat - Nomostra les dades de la imatge pujada per deixar temps a que pugi a l'aplicaciÃ³
             }
             
-            // Creació del llistat de punts 
+            // CreaciÃ³ del llistat de punts 
             function creaRelacioPunts(){
                 $.each(visor.data,function(i,punt){
                     /*var puntMapa = $('<div/>')
@@ -728,7 +834,7 @@
                 $('#relacioPuntsMapa').height($(window).height() - 250);    
             }
             
-            // Situar la icona de la càmera
+            // Situar la icona de la cÃ mera
             function placeCamera(e){
                 visor.map.removeLayer(visor.markerCamera);
                 var iconSizeX = 030;
@@ -746,7 +852,7 @@
                     .bindPopup(
                         "<h2 style='font-family:Arial;font-size:1.2em;height:auto;width:200px'>" 
                         +  " <img width='30' src='images/camera-icon.png' style='float:left;margin-right:2em'/ >"   
-                        + ' Indret on es farà la fotografia'  
+                        + ' Indret on es farÃ  la fotografia'  
                         + "</h2>" 
                         + ''                    
                         )
@@ -758,12 +864,72 @@
             }
     
     </script>
+
+    <link rel="stylesheet" type="text/css" href="css/ionic.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#insert").click(function() {
+            var title = $("#title").val();
+            var duration = $("#duration").val();
+            var price = $("#price").val();
+            var dataString = "title=" + title + "&duration=" + duration + "&price=" + price + "&insert=";
+            if ($.trim(title).length > 0 & $.trim(duration).length > 0 & $.trim(price).length > 0) {
+                $.ajax({
+                    type: "POST",
+                    url: "http://www.municipi.net/app3/insert.php",
+                    data: dataString,
+                    crossDomain: true,
+                    cache: false,
+                    beforeSend: function() {
+                        $("#insert").val('Connecting...');
+                    },
+                    success: function(data) {
+                        if (data == "success") {
+                            alert("inserted");
+                            $("#insert").val('submit');
+                        } else if (data == "error") {
+                            alert("error");
+                        }
+                    }
+                });
+            }
+            return false;
+        });
+    });
+    </script>
     
-    </head>
-    
-    <body style="font-family:arial">
-        <!--------------------------------  Pàgina Portada ---------------------------------------->     
-        <!--div data-role="page" id="portada" style="width:100%;height:100%;margin:0px;background-color:rgb(172,17,24);overflow:hidden">  
+    <script type="text/javascript">
+function myPosition() {  
+  var options = {  
+  enableHighAccuracy: true,  
+  maximumAge:10000  
+   }  
+   var watchID = navigator.geolocation.getCurrentPosition(onSuccess2, onError2, options);  
+  
+  
+   function onSuccess2(position) {  
+  alert('Latitude: '          + position.coords.latitude          + '\n' +  
+'Longitude: '         + position.coords.longitude         + '\n' +  
+'Altitude: '          + position.coords.altitude          + '\n' +  
+'Accuracy: '          + position.coords.accuracy          + '\n' +  
+'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +  
+'Heading: '           + position.coords.heading           + '\n' +  
+'Speed: '             + position.coords.speed             + '\n' +  
+'Timestamp: '         + position.timestamp                + '\n');  
+   };  
+  
+  
+   function onError2(error) {  
+  alert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n');  
+   }  
+}  
+    </script>
+</head>
+
+<body>
+
+ <div data-role="page" id="portada" style="width:100%;height:100%;margin:0px;background-color:rgb(172,17,24);overflow:hidden">  
             <div id="fotoPortada" style="width:100%;height:70%;">
 				<div style="height:10%;width100%"></div>
 					<div style="height:70%;width:100%;">
@@ -777,12 +943,12 @@
             </div>
             <div style="float:left;height:100%;width:10%;"></div>
             <div style="text-align:center; color: rgb(255, 255, 255); font-size:2em; width: 100%; height: 30%;">
-                <div style="text-align:center; color: rgb(255, 255, 255); overflow:hidden;font-size:1.42em; margin-top:7%;margin-left:10%;width: 80%; height:auto;"> Notifica Avís </div>
-                <div style="text-align: center; overflow: hidden; color: rgb(255, 255, 255); width: 80%; margin-left: 10%; height: auto; font-size: 0.8em; line-height: 0.9em;"> Situacions de risc pels animals </div>
+                <div style="text-align:center; color: rgb(255, 255, 255); overflow:hidden;font-size:1.42em; margin-top:7%;margin-left:10%;width: 80%; height:auto;"> Notifica AvÃ­s </div>
+                <div style="text-align: center; overflow: hidden; color: rgb(255, 255, 255); width: 80%; margin-left: 10%; height: auto; font-size: 0.8em; line-height: 0.9em;"> IncidÃ¨ncies a Sant Pere Pescador </div>
             </div>
-        </div-->
+        </div>
         
-        <!--------------------------------  Pàgina Mapa ------------------------------------------->     
+        <!--------------------------------  PÃ gina Mapa ------------------------------------------->     
         <div data-role="page" id="pageMap" > 
             <!------------------ Header --------------->    
 			<div id="header" style="border-width: 0px; height:2.3em;background-color: rgb(172, 17, 24); color: rgb(250, 250, 250); font-family: inherit; font-size: 1.1em; font-weight: lighter; text-shadow: 0px 0px; z-index: 1; " role="banner" data-role="header" class="ui-header ui-bar-inherit">
@@ -793,10 +959,10 @@
 					
 					<div style="float: left; font-weight:bold; text-align: center; font-family: Verdana; color: rgb(255, 255, 255); width: 100%; height: 1.1em; margin-top: 0.3em;"> 
 						<a id="activa" href="#imatgePujada" data-transition="pop">	
-							Alerta Situació
+							Aj. SPP
 						</a>			
 				     </div>
-					<div style="clear: both; text-align: center; font-family: Verdana; color: rgb(255, 255, 255); font-size: 0.6em; width: 100%; height: 15px; margin-top: -1px;"> Risc Animal </div>
+					<div style="clear: both; text-align: center; font-family: Verdana; color: rgb(255, 255, 255); font-size: 0.6em; width: 100%; height: 15px; margin-top: -1px;"> IncidÃ¨ncies </div>
 				</div>
 				<div id="troba5" style="float: right; margin-top: -1.3em;height:24px ; font-size: 1.5em; width: 5%;margin-right: 9px;" onclick="navigator.app.exitApp();">
 					<i class="fa fa-close"></i>
@@ -850,7 +1016,7 @@
             </div>
         </div>
         
-        <!--------------------------------  Pàgina Detall Element --------------------------------->        
+        <!--------------------------------  PÃ gina Detall Element --------------------------------->        
         <div data-role="page" data-dialog="true" id="llistaElements"> 
             <div data-role="header"  role="banner" id = "headerDetail" style="z-index: 1; box-shadow:0px 2px 6px #444444;">         
                 <!--div data-inline="true" value="on"  style="" checked="checked" type="radio" onclick=" visor.mapDetail.setView([visor.posicioActual.lat, visor.posicioActual.lng], 20);" href="#" class="ui-btn-right ui-btn ui-icon-navigation ui-btn-icon-left ui-shadow ui-corner-all "> Troba'm </div>    
@@ -880,7 +1046,7 @@
                 </div>          
             </div-->            
         </div>
-        <!--  Pàgina Imatge Pujada -->      
+        <!--  PÃ gina Imatge Pujada -->      
         <div data-role="page" data-dialog="true" id="imatgePujada"> 
             <div data-role="header"  role="banner" id ="headerImatgePujada" style="z-index: 1; box-shadow:0px 2px 6px #444444;">                
                 <!--div data-inline="true" value="on"  style="" checked="checked" type="radio" onclick=" visor.mapDetail.setView([visor.posicioActual.lat, visor.posicioActual.lng], 20);" href="#" class="ui-btn-right ui-btn ui-icon-navigation ui-btn-icon-left ui-shadow ui-corner-all "> Troba'm </div>    
@@ -896,7 +1062,7 @@
 
             <div data-role="content" id="contImatgePujada"> 
                 <form id="frmActDesc" data-ajax="false" >
-					<label for="textarea-1">Descripci&oacute;</label>
+					<label for="textarea-1">DescripciÃ³</label>
 					<textarea name="textarea-1" id="textarea-1"></textarea>
 					<a onclick="actualitzaDescripcio()" data-rel="back" data-theme="b" class="ui-btn ui-corner-all ui-icon-delete " href="#">
 						Enviar les dades
@@ -906,15 +1072,88 @@
             <div data-role="footer">
                 <h1>Dades enregistrades</h1>
             </div>
-            
 
-            <!--div data-role="footer"  id = "footer" style="box-shadow: 0 0 8px 2px rgb(68, 68, 68);"> 
-                <div data-type="horizontal" data-role="controlgroup" style="text-align:center;">    
-                    <a onclick="nextOverlayLayer(-1)" href="#" style="width:30px;height:16px;"  class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-arrow-l"></a>
-                    <a style="margin-top: 0px;width:120px" id="layerName"   class="ui-btn ">Layers</a>
-                    <a onclick="nextOverlayLayer(1)" href="#" style="width:30px;height:16px;" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-notext ui-icon-arrow-r"></a>
-                </div>          
-            </div-->            
-        </div>  
-    </body>
-</html>   
+
+    <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
+        <h1 class="title">Insert Database</h1>
+        <a class="button button-clear" href="readjson.html">Read JSON</a>
+        <a class="button button-clear" href="geo.html">Geo</a>
+    </div>
+    <br/>
+    <br/>
+    <div class="list">
+        <input type="hidden" id="id" value="" />
+        <div class="item">
+            <label>Titlee</label>
+            <input type="text" id="title" value="" />
+        </div>
+        <div class="item">
+            <label>Duration</label>
+            <input type="text" id="duration" value="" />
+        </div>
+        <div class="item">
+            <label>Price</label>
+            <input type="text" id="price" value="" />
+        </div>
+        <div class="item">
+            <input type="button" id="insert" class="button button-block" value="Insert" />
+        </div>
+    </div>
+    --
+    <div id="state">
+    <h3>Location</h3>
+    <ul>
+        <li class="location">
+            <span class="name">Location</span>
+            <span class="state on">AVAILABLE</span>
+            <span class="state off">UNAVAILABLE</span>
+        </li>
+        <li class="location-setting os-conditional android ios">
+            <span class="name">Location setting</span>
+            <span class="state on">ENABLED</span>
+            <span class="state off">DISABLED</span>
+        </li>
+        <li class="gps-location android-only">
+            <span class="name">GPS Location</span>
+            <span class="state on">AVAILABLE</span>
+            <span class="state off">UNAVAILABLE</span>
+        </li>
+        <li class="gps-location-setting android-only">
+            <span class="name">GPS Location setting</span>
+            <span class="state on">ENABLED</span>
+            <span class="state off">DISABLED</span>
+        </li>
+        <li class="network-location android-only">
+            <span class="name">Network Location</span>
+            <span class="state on">AVAILABLE</span>
+            <span class="state off">UNAVAILABLE</span>
+        </li>
+        <li class="network-location-setting android-only">
+            <span class="name">Network Location setting</span>
+            <span class="state on">ENABLED</span>
+            <span class="state off">DISABLED</span>
+        </li>
+        <li class="location-mode android-only">
+            <span class="name">Location Mode</span>
+            <span class="value"></span>
+        </li>
+        <li class="location-authorization os-conditional android ios">
+            <span class="name">Location authorized</span>
+            <span class="state on">AUTHORIZED</span>
+            <span class="state off">UNAUTHORIZED</span>
+        </li>
+        <li class="location-authorization-status os-conditional android ios">
+            <span class="name">Location authorization status</span>
+            <span class="value"></span>
+        </li>
+    </ul>
+   
+</div>
+
+<div class="settings">
+    <h3>Use permissions</h3>
+    <button id="get-location">Get Current Location</button>
+</div>
+</body>
+
+</html>
