@@ -51,21 +51,7 @@
 
     <!-- Core plugins -->
     <!--gap:plugin name="org.apache.cordova.battery-status" /-->
-    <gap:plugin name="org.apache.cordova.camera" source="npm" />
-    <gap:plugin name="org.apache.cordova.media-capture" source="npm" />
-    <gap:plugin name="org.apache.cordova.console" source="npm" />
-    <!--gap:plugin name="org.apache.cordova.device" /-->
-    <gap:plugin name="org.apache.cordova.device-motion" source="npm"/>
-    <gap:plugin name="org.apache.cordova.device-orientation"  source="npm"/>
-    <gap:plugin name="org.apache.cordova.dialogs" source="npm"/>
-    <gap:plugin name="org.apache.cordova.file-transfer" source="npm"/>
-    <gap:plugin name="org.apache.cordova.globalization" source="npm"/>
-    <gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />
-    <gap:plugin name="org.apache.cordova.media" source="npm"/>
-    <gap:plugin name="org.apache.cordova.network-information" source="npm" />
-    <gap:plugin name="org.apache.cordova.splashscreen" source="npm" />
-    <gap:plugin name="org.apache.cordova.vibration" source="npm"/>
-    <gap:plugin spec="https://github.com/phonegap-build/StatusBarPlugin.git" source="npm" />
+
 	
 	
 	<plugin name="cordova-plugin-whitelist" spec="*" />
