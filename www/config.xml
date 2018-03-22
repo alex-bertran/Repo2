@@ -55,5 +55,7 @@
     <engine name="windows" spec="latest" />
 
     <icon src="icon.png" />
+	
+    <splash src="icon.png" />
 
 </widget>
