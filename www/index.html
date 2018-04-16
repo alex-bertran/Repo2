@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
     <head>
@@ -90,7 +89,6 @@
             .controlMapa-junt {
                 margin-top: 1px;
             }
-
 			.controlMapa {
 				background-color: #656565;
 				border-radius: 5px 0 0 5px;
@@ -110,11 +108,9 @@
 			}
 			
             .controlMapa:hover {opacity:0.97}
-
             .controlMapa-separat {margin-top:5px}
             
             .caixaControl{ z-index:5000;position:fixed;right:0px;top:60px; }
-
             .caixaControlInferior {
                 position: fixed;
                 right: 0;
@@ -169,7 +165,6 @@
         <script src="js/leaflet-plugins-master/layer/tile/Google.js"></script>          
         
         <script type="text/javascript"> 
-
             var visor = {
                 'actiu' : 0,
                 'markerGroupPosActual': null,
@@ -320,7 +315,6 @@
 							});
 							break;
 					}   
-
 					visor.map.addLayer(capa);
 					// -- Event en fer click    
 					visor.map.on('click', function(e) {        
@@ -351,7 +345,6 @@
                                    +    '    Buscant localització ... <i class="fa fa-spin fa-spinner"/>'
                                    +    ' </div>';
                         break;
-
                     case 'mostraFoto':
                         if ( foto == visor.data.length ) { foto = visor.data.length - 1 }
                         if ( foto < 0 ) { foto = 0 }
@@ -410,7 +403,6 @@
                         missatgePeuMapa( 'fesFoto' );
                         break;                                
                 }
-
                 $('#peuMapa').html( txtPeu );
                 
 				$('#peuMapa')
@@ -462,7 +454,6 @@
 				//-- Funció quan troba la posició
 				visor.map.on('locationfound', posicioTrobada);
 			}  			
-
             // -- Recupera la posició actual i la introdueix a les variables corresponents
             function posicioTrobada(e) {
                 //visor.alertaBuscantPosicio == 0 ? alert('BuscantPosició') : null;
@@ -518,7 +509,6 @@
                             );
                 }
             }
-
             function mostraPosicioActual(){            
                 if (visor.posicioActual.trobat == 1) { 
                     centraPosicio(visor.posicioActual,17);
@@ -541,7 +531,6 @@
             function onLocationError(e) {
                 alert(e.message);
             }
-
             //-- Enviament de la imatge i actualització de la base de dades
             /*
             function uploadFromGallery_2() {
@@ -591,7 +580,6 @@
                 var ft = new FileTransfer();
                 ft.upload(imageURI, encodeURI("http://www.municipi.net/app/php/upload.php"), ftWin, ftFail, options,true);                                       
             } 
-
             function ftWin(r) {
                 console.log("Code = " + r.responseCode);
                 console.log("Response = " + r.response);
@@ -611,7 +599,6 @@
 					}                                       
 				});             				
             }
-
 			function actualitzaDescripcio() {
 				//$.mobile.back();				
 				var params = {};
@@ -648,7 +635,6 @@
                 //console.log("upload error source " + error.source);
                 //console.log("upload error target " + error.target);
             }       
-
             //-- Ajax per recuperar punts 
             function recuperaElements() {
                 visor.map.removeLayer(visor.totMarker);
@@ -772,7 +758,6 @@
                     shadowAnchor: [10, 30],  				// the same for the shadow
                     popupAnchor:  [-0 , -16 ] 				// point from which the popup should open relative to the iconAnchor
                 });       
-
                 visor.markerCamera = L.marker(e.latlng,{icon:iconMap})
                     .addTo(visor.map)
                     .bindPopup(
@@ -788,9 +773,7 @@
                 missatgePeuMapa( 'fesFoto' )                
                 ajustaFinestres();    
             }
-
     
-
     </script>
     
     </head>
@@ -826,9 +809,10 @@
 				<div style="float: left; height: auto; text-align: left; padding-top: 0px; font-family: Verdana; color: rgb(220, 70, 0); width: 100%; margin-left:-5%;float: left; ">
 					
 					<div style="float: left; font-weight:bold; text-align: center; font-family: Verdana; color: rgb(255, 255, 255); width: 100%; height: 1.1em; margin-top: 0.3em;"> 
-						<a id="activa" href="#imatgePujada" data-transition="pop">Alerta</a><a id="activa" href="geo.html" data-transition="pop">TEST BDD</a>				
+						<a id="activa" href="#imatgePujada" data-transition="pop">	
+							Alerta Via Pública
+						</a>			
 				     </div>
-                  
 					<div style="clear: both; text-align: center; font-family: Verdana; color: rgb(255, 255, 255); font-size: 0.6em; width: 100%; height: 15px; margin-top: -1px;"> Sant Pere Pescador </div>
 				</div>
 				<div id="troba5" style="float: right; margin-top: -1.3em;height:24px ; font-size: 1.5em; width: 5%;margin-right: 9px;" onclick="navigator.app.exitApp();">
@@ -877,15 +861,11 @@
             </div>
             
             <!------------------ Footer --------------->
-
             <div data-role="footer"> 
                 <div id="peuMapa" style="height:auto; display:block;position: fixed; text-align: center; font-size: 1.1em; background-color: rgb(255, 255, 255); border-radius: 0px; bottom: 0px; left: 0px; width: 100%; opacity: 1; color: rgb(122, 122, 122);">
-
                 </div>
             </div>
         </div>
-
-
         
         <!--------------------------------  Pàgina Detall Element --------------------------------->        
         <div data-role="page" data-dialog="true" id="llistaElements"> 
